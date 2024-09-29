@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+<body>
+    <h1>Grade Calculations</h1>
+<p>Average Grade: {{ average_grade }}</p>
+<p>Highest Grade: {{ highest_grade }}</p>
+
+<h2>All Grades:</h2>
+<ul>
+    {% for grade in grades %}
+        <li>{{ grade }}</li>
+    {% endfor %}
+</ul>
+
+    <h1>Grades Calculation</h1>
+
+    {% if average_grade %}
+        <p>Average Grade: {{ average_grade }}</p>
+    {% endif %}
+
+    {% if highest_grade_student %}
+        <h2>Top Student</h2>
+        <p>Name: {{ highest_grade_student.name }}</p>
+        <p>Age: {{ highest_grade_student.age }}</p>
+        <p>Grade: {{ highest_grade_student.grade }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <a href="{% url 'submit_student' %}">Go Back</a>
+</body>
+</html>

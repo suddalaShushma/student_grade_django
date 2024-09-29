@@ -1,0 +1,30 @@
+<!-- students/templates/students/student_list.html -->
+<!-- students/templates/students/student_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Bio</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.bio }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'submit_student' %}">Submit Another Student</a>
+</body>
+</html>
+
